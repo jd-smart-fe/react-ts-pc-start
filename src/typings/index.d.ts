@@ -3,5 +3,5 @@ export type Response<T> = {
     [P in keyof T]: T[P];
 } & { code: number };
 
-// introPage推荐训练页面相关类型定义
-export { IntroListResponse,copyIntroToMyType} from './introList';
+// 接口请求相关类型定义
+export { DataResponse } from './getData';

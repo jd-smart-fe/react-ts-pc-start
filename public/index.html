@@ -3,30 +3,7 @@
 
 <head>
   <!-- set `maximum-scale` for some compatibility issues -->
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-  <script src="https://static.360buyimg.com/smart/jdsmart-1.0.3.js"></script>
-  <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
-  <script>
-    if ("addEventListener" in document) {
-      document.addEventListener(
-        "DOMContentLoaded",
-        function () {
-          FastClick.attach(document.body);
-        },
-        false
-      );
-    }
-    if (!window.Promise) {
-      document.writeln(
-        '<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"' +
-        ">" +
-        "<" +
-        "/" +
-        "script>"
-      );
-    }
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
   <meta charset="utf-8" />
 
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -61,22 +38,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <script>
-    (function () {
-      var baseFontSize = 100;
-      var baseWidth = 750;
-      var set = function () {
-        var clientWidth = window.innerWidth;
-        var rem = 100;
-        if (clientWidth != baseWidth) {
-          rem = Math.floor(clientWidth / baseWidth * baseFontSize);
-        }
-        document.querySelector('html').style.fontSize = rem + 'px';
-      }
-      set();
-      window.addEventListener('resize', set);
-    }());
-  </script>
 </body>
 
 </html>

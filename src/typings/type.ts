@@ -14,7 +14,5 @@ export interface RoutedProps extends Props, RouteComponentProps {}
 declare global {
   interface Window {
     smartUtil:any,
-    goBack:any,
-    saveAll:any
   }
 }

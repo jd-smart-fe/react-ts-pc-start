@@ -17,7 +17,9 @@
       "object-literal-sort-keys": false,
     
       "ordered-imports": false,
-      "no-string-literal": false
+      "no-string-literal": false,
+      "semicolon":[true, "always", "ignore-interfaces"],
+      "quotemark":[true, "single","avoid-escape","jsx-double"]
     },
     "linterOptions": {
       "exclude": [

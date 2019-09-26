@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const isWsl = require('is-wsl');
@@ -358,8 +358,12 @@ module.exports = function (webpackEnv) {
                       },
                     },
                   ],
-                  //antd按需加载
-                  ["import", { libraryName: "antd-mobile", style: "css" }] // `style: true` 会加载 less 文件
+                  // antd 按需加载
+                  ["import", {
+                    "libraryName": "antd",
+                    "libraryDirectory": "es",
+                    "style": "css" // `style: true` 会加载 less 文件
+                  }]
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -453,41 +457,13 @@ module.exports = function (webpackEnv) {
                     ? shouldUseSourceMap
                     : isEnvDevelopment,
                   modules: true,
-                  // localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                  localIdentName: '[path][name]__[local]--[hash:base64:5]',
                   getLocalIdent: getCSSModuleLocalIdent
                 },
                 'less-loader'
               )
             },
 
-            //新配置 增加css module
-            /*
-            {
-             test: /\.(css|less)$/,
-             include: /node_modules/,
-             use: [{
-               loader: require.resolve('style-loader')// creates style nodes from JS strings
-             }, {
-               loader: require.resolve('css-loader') // translates CSS into CommonJS
-             }, {
-               loader: require.resolve('less-loader'), // compiles Less to CSS
-               options: { javascriptEnabled: true, sourceMap: true },
-             }],
-           },
-           {
-             test: /\.(css|less)$/,
-             exclude: /node_modules/,
-             use: [{
-               loader: require.resolve('style-loader') // creates style nodes from JS strings
-             }, {
-               loader: require.resolve('css-loader'), // translates CSS into CommonJS
-               options: {
-                 modules: true,
-                 localIdentName: '[path][name]__[local]--[hash:base64:5]',
-               }
-             }],
-           },
-           */
           
             // Opt-in support for SASS (using .scss or .sass extensions).
             // By default we support SASS Modules with the

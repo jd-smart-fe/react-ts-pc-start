@@ -1,1 +1,1 @@
-export { getIntroList,getMyList,copyIntroToMy } from './introList';
+export { getData } from './getData';

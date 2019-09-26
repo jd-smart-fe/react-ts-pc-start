@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { Response } from '@/typings';
-import { Toast } from 'antd-mobile';
+import { notification } from 'antd';
 
 const codeMessage: { [key: string]: string } = {
   200: '服务器成功返回请求的数据。',
@@ -20,10 +20,26 @@ const codeMessage: { [key: string]: string } = {
   504: '网关超时。'
 };
 
+/**
+ * 统一处理URL 添加前缀等统一操作
+ * @param {*} url 原URL
+ * 可以考虑把固定部分抽离成配置文件，根据需求来
+ */
+const trimURL = (url: string | undefined) => {
+  if (process.env.NODE_ENV === 'production') {
+    return `/${url}`;
+  } else if (process.env.NODE_ENV === 'development') {
+    // 如果在开发环境的时候可以用于本地联调
+    const baseUrl = `http://localhost:3101/proxy`;
+    return `${baseUrl}/${url}`;
+  }
+};
+
+
 const instance = axios.create({
   timeout: 3000, // 超时时间
   headers: {
-    "Content-Type": "application/json;"
+    'Content-Type': 'application/json'
     // "Content-Type":"application/x-www-form-urlencoded;charset=utf-8"
   }
 });
@@ -54,9 +70,19 @@ instance.interceptors.response.use(
     const { status } = error.response;
     console.warn(`http error: status-${status} message-${codeMessage[status]}`);
     if(codeMessage[status]!==null||undefined) {
-      Toast.info(codeMessage[status]);
+      notification['warning']({
+        placement: 'topRight',
+        duration : 3,
+        message: '提示',
+        description: codeMessage[status]
+      });
     }else {
-      Toast.info(error);
+      notification['warning']({
+        placement: 'topRight',
+        duration : 3,
+        message: '提示',
+        description: error
+      });
     }
     return null;
   }
@@ -75,6 +101,7 @@ instance.interceptors.response.use(
 
 function request<T>(config: AxiosRequestConfig): Promise<Response<T>> | null {
 //   config = addTimestamp(config);
+  config = Object.assign({}, config, {url: trimURL(config.url)});
   return (instance.request<Response<T>>(config) as any) as Promise<Response<T>>;
 }
 

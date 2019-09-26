@@ -1,5 +1,5 @@
 {
-  "name": "ts-hook-mobile",
+  "name": "react-ts-pc-start",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +15,7 @@
     "@types/react-virtualized": "^9.21.4",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
-    "antd-mobile": "^2.2.14",
+    "antd": "^3.23.4",
     "babel-eslint": "10.0.1",
     "babel-jest": "^24.8.0",
     "babel-loader": "8.0.5",
