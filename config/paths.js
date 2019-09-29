@@ -1,3 +1,9 @@
+/*
+ * @Author: zhaohongyun1@jd.com
+ * @Date: 2019-09-25 22:02:02
+ * @LastEditors: zhaohongyun2
+ * @LastEditTime: 2019-09-25 22:02:02
+ */
 'use strict';
 
 const path = require('path');
@@ -76,7 +82,6 @@ module.exports = {
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
-  appTsLint: resolveApp("tslint.json"),
   appJsConfig: resolveApp('jsconfig.json'),
   yarnLockFile: resolveApp('yarn.lock'),
   testsSetup: resolveModule(resolveApp, 'src/setupTests'),

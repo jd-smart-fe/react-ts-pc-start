@@ -1,3 +1,9 @@
+/*
+ * @Author: zhaohongyun1@jd.com
+ * @Date: 2019-09-27 10:27:28
+ * @LastEditors: zhaohongyun2
+ * @LastEditTime: 2019-09-27 10:27:28
+ */
 
 
 const fs = require('fs');
@@ -464,7 +470,7 @@ module.exports = function (webpackEnv) {
               )
             },
 
-          
+
             // Opt-in support for SASS (using .scss or .sass extensions).
             // By default we support SASS Modules with the
             // extensions .module.scss or .module.sass
@@ -643,7 +649,6 @@ module.exports = function (webpackEnv) {
           ? `${__dirname}/pnpTs.js`
           : undefined,
         tsconfig: paths.appTsConfig,
-        tslint: paths.appTsLint,
         reportFiles: [
           '**',
           '!**/__tests__/**',
