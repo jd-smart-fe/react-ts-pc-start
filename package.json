@@ -146,9 +146,10 @@
   "devDependencies": {
     "@types/react": "^16.8.23",
     "@types/react-loadable": "^5.5.1",
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
-    "eslint": "^5.16.0",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
+    "eslint": "^6.5.0",
+    "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.3.0",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-import": "^2.18.2",

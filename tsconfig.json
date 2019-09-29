@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-    "@/*": ["../src/*"]
+      "@/*": ["src/*"],
+      "typings/*": ["src/typings/*"]
     },
     "target": "es5",
     "lib": [

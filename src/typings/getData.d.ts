@@ -1,6 +1,5 @@
 export interface DataResponse {
-    data: {
-      id: number
-    }[];
-  }
-  
+  data: {
+    id: number;
+  }[];
+}

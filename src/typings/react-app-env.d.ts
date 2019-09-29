@@ -1,3 +1,10 @@
+/*
+ * @Author: zhaohongyun1@jd.com
+ * @Date: 2019-09-27 10:27:28
+ * @LastEditors: zhaohongyun2
+ * @LastEditTime: 2019-09-29 16:01:13
+ */
+
 /// <reference types="node" />
 /// <reference types="react" />
 /// <reference types="react-dom" />
@@ -35,14 +42,16 @@ declare module '*.png' {
 }
 
 declare module '*.webp' {
-    const src: string;
-    export default src;
+  const src: string;
+  export default src;
 }
 
 declare module '*.svg' {
   import * as React from 'react';
 
-  export const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  export const ReactComponent: React.FunctionComponent<
+    React.SVGProps<SVGSVGElement>
+  >;
 
   const src: string;
   export default src;

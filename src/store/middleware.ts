@@ -1,5 +1,10 @@
+/*
+ * @Author: zhaohongyun1@jd.com
+ * @Date: 2019-09-25 22:02:02
+ * @LastEditors: zhaohongyun2
+ * @LastEditTime: 2019-09-25 22:02:02
+ */
 import { State, Action } from './types';
-
 
 const applyMiddleware = (
   state: State,

@@ -1,9 +1,10 @@
 import React from 'react';
 
+import { Props } from '../typings/type';
+
 import reducer, { initialState } from './reducers';
 import applyMiddleware from './middleware';
 import { Action, State } from './types';
-import { Props } from 'typings/type';
 
 /**
  * 初始化上下文
@@ -41,7 +42,7 @@ const Provider = (props: Props) => {
 export const useDispatch = () => React.useContext(dispatchCtx);
 export const useStore = (nameSpace: keyof State | null) => {
   const store = React.useContext(storeCxt);
-  return nameSpace!==null ? store[nameSpace] : store;
+  return nameSpace !== null ? store[nameSpace] : store;
 };
 
 export default Provider;
