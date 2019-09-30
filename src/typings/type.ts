@@ -2,7 +2,7 @@
  * @Author: zhaohongyun1@jd.com
  * @Date: 2019-09-27 10:27:28
  * @LastEditors: zhaohongyun2
- * @LastEditTime: 2019-09-27 10:27:28
+ * @LastEditTime: 2019-09-30 12:14:16
  */
 /**
  * 全局通用的类型定义
@@ -20,5 +20,24 @@ export interface RoutedProps extends Props, RouteComponentProps {}
 declare global {
   interface Window {
     smartUtil: any;
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;
   }
+}
+export interface StoreState {
+  todos: Todo[];
+  visibilityFilter: VisibilityFilters;
+}
+
+export enum VisibilityFilters {
+  SHOW_ALL = 'SHOW_ALL',
+  SHOW_COMPLETED = 'SHOW_COMPLETED',
+  SHOW_ACTIVE = 'SHOW_ACTIVE',
+}
+
+export class Todo {
+  public completed!: boolean;
+
+  public id!: number;
+
+  public text!: string;
 }

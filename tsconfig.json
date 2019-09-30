@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["src/*"],
-      "typings/*": ["src/typings/*"]
+      "@/*": ["*"],
+      "typings/*": ["/typings/*"]
     },
+    "typeRoots": ["node_modules/@types", "./src/typings"],
     "target": "es5",
     "lib": [
       "dom",
@@ -26,5 +27,15 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "config",
+    "lib",
+    "public",
+    "scripts",
+    "vm",
+    "wikidata"
   ]
 }

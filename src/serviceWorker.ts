@@ -1,3 +1,9 @@
+/*
+ * @Author: zhaohongyun1@jd.com
+ * @Date: 2019-09-25 22:02:02
+ * @LastEditors: zhaohongyun2
+ * @LastEditTime: 2019-09-29 20:01:10
+ */
 // This optional code is used to register a service worker.
 // register() is not called by default.
 
@@ -101,7 +107,7 @@ function registerValidSW(swUrl: string, config?: Config) {
         };
       };
     })
-    .catch(error => {
+    ['catch'](error => {
       console.error('Error during service worker registration:', error);
     });
 }
@@ -127,7 +133,7 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
         registerValidSW(swUrl, config);
       }
     })
-    .catch(() => {
+    ['catch'](() => {
       console.log(
         'No internet connection found. App is running in offline mode.'
       );

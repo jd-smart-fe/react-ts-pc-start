@@ -1,6 +1,12 @@
+/*
+ * @Author: zhaohongyun1@jd.com
+ * @Date: 2019-09-27 10:27:28
+ * @LastEditors: zhaohongyun2
+ * @LastEditTime: 2019-09-29 18:06:13
+ */
 import axios, { AxiosRequestConfig } from 'axios';
-import { Response } from '@/typings';
 import { notification } from 'antd';
+import { Response } from '../typings/index.d';
 
 const codeMessage: { [key: string]: string } = {
   200: '服务器成功返回请求的数据。',
@@ -28,13 +34,13 @@ const codeMessage: { [key: string]: string } = {
 const trimURL = (url: string | undefined) => {
   if (process.env.NODE_ENV === 'production') {
     return `/${url}`;
-  } else if (process.env.NODE_ENV === 'development') {
+  }
+  if (process.env.NODE_ENV === 'development') {
     // 如果在开发环境的时候可以用于本地联调
     const baseUrl = `http://localhost:3101/proxy`;
     return `${baseUrl}/${url}`;
   }
 };
-
 
 const instance = axios.create({
   timeout: 3000, // 超时时间
@@ -69,17 +75,17 @@ instance.interceptors.response.use(
     // return Promise.reject(error); 非业务异常无需抛出错误 内部吞掉
     const { status } = error.response;
     console.warn(`http error: status-${status} message-${codeMessage[status]}`);
-    if(codeMessage[status]!==null||undefined) {
-      notification['warning']({
+    if (codeMessage[status] !== null || undefined) {
+      notification.warning({
         placement: 'topRight',
-        duration : 3,
+        duration: 3,
         message: '提示',
         description: codeMessage[status]
       });
-    }else {
-      notification['warning']({
+    } else {
+      notification.warning({
         placement: 'topRight',
-        duration : 3,
+        duration: 3,
         message: '提示',
         description: error
       });
@@ -100,9 +106,11 @@ instance.interceptors.response.use(
 // };
 
 function request<T>(config: AxiosRequestConfig): Promise<Response<T>> | null {
-//   config = addTimestamp(config);
-  config = Object.assign({}, config, {url: trimURL(config.url)});
-  return (instance.request<Response<T>>(config) as any) as Promise<Response<T>>;
+  //   config = addTimestamp(config);
+  const curConfig = { ...config, url: trimURL(config.url) };
+  return (instance.request<Response<T>>(curConfig) as any) as Promise<
+    Response<T>
+  >;
 }
 
 export default request;
