@@ -13,19 +13,22 @@ interface Props {
 
 const mapStateToProps = (
   state: StoreState,
-  ownProps: Props
+  ownProps: Props,
 ): { active: boolean } => ({
   active: ownProps.filter === state.visibilityFilter,
 });
 
 const mapDispatchToProps = (
   dispatch: Dispatch,
-  ownProps: Props
-): { onClick: () => void } => ({
-  onClick: () => dispatch(setVisibilityFilter(ownProps.filter)),
-});
+  ownProps: Props,
+): { onClick: () => void } => {
+  console.log(ownProps);
+  return {
+    onClick: () => dispatch(setVisibilityFilter(ownProps.filter)),
+  };
+};
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Link);

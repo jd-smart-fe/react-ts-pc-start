@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import { actions } from '../../application/visibleTodoList/store';
+import { actions } from '../../application/addTodo/store';
 import { Todo as TodoClass } from '../../typings/type';
 import Todo from '../todo';
 
 interface Props {
   todos: TodoClass[];
-  toggleTodo: (id: number) => actions.ToggleTodoAction;
+  toggleTodo: (id: number) => actions.TodoAction;
 }
 
 const TodoList = ({ todos, toggleTodo }: Props) => (

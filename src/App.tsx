@@ -3,7 +3,7 @@ import AddTodo from './application/addTodo';
 import VisibleTodoList from './application/visibleTodoList';
 import Footer from './components/footer';
 
-// import logo from './../logo.svg';
+// import logo from './logo.svg';
 
 function App() {
   return (

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { actions } from '../../application/visibleTodoList/store';
+import { actions } from '../../application/addTodo/store';
 
 interface Props {
-  onClick: (id: number) => actions.ToggleTodoAction;
+  onClick: (id: number) => actions.TodoAction;
   completed: boolean;
   text: string;
 }

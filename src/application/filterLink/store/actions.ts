@@ -2,7 +2,7 @@
  * @Author: zhaohongyun1@jd.com
  * @Date: 2019-09-30 10:35:13
  * @LastEditors: zhaohongyun2
- * @LastEditTime: 2019-09-30 10:40:16
+ * @LastEditTime: 2019-10-08 09:58:33
  */
 import { SET_VISIBILITY_FILTER } from './constants';
 import { VisibilityFilters } from '../../../typings/type';
@@ -13,7 +13,7 @@ export interface SetVisibilityFilterAction {
 }
 
 export const setVisibilityFilter = (
-  filter: VisibilityFilters
+  filter: VisibilityFilters,
 ): SetVisibilityFilterAction => ({
   filter,
   type: SET_VISIBILITY_FILTER,

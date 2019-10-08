@@ -2,9 +2,8 @@
  * @Author: zhaohongyun1@jd.com
  * @Date: 2019-09-30 10:07:36
  * @LastEditors: zhaohongyun2
- * @LastEditTime: 2019-09-30 12:26:27
+ * @LastEditTime: 2019-10-08 10:54:50
  */
-import { type } from 'os';
 import * as actionTypes from './constants';
 
 let nextTodoId = 0;
@@ -23,7 +22,6 @@ export type TodoAction = AddTodoAction | ToggleTodoAction;
 
 export const toggleTodo = (id: number): TodoAction => ({
   id,
-  // eslint-disable-next-line prettier/prettier
   type: actionTypes.TOGGLE_TODO,
 });
 
