@@ -5,11 +5,12 @@ interface Props {
   onClick: (id: number) => actions.TodoAction;
   completed: boolean;
   text: string;
+  id: number;
 }
 
-const Todo = ({ onClick, completed, text }: Props) => (
+const Todo = ({ onClick, id, completed, text }: Props) => (
   <li
-    onClick={() => onClick}
+    onClick={() => onClick(id)}
     style={{
       textDecoration: completed ? 'line-through' : 'none',
     }}
