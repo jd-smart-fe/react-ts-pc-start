@@ -1,6 +1,107 @@
 # react-ts-pc-start
 > PC端H5开发规范模板
 
+### 工程文件组织
+
+```
+components/  (应用级别的通用组件)
+containers/  
+  feature1/
+    components/  (功能拆分出的专用组件)
+    feature1.js  (容器组件)
+    index.js     (feature1对外暴露的接口)
+redux/
+  index.js (combineReducers)
+  module1.js (reducer, action types, actions creators)
+  module2.js (reducer, action types, actions creators)
+index.js
+```
+应用Ducks工程目录组织方式的思想，《React进阶之路》一书的示例代码第9章，项目bbs-redux-reselect工程目录结构如下：
+```
+│  index.js
+│
+├─components # 全局通用组件
+│  ├─Header
+│  │      index.js
+│  │      style.css
+│  │
+│  ├─Loading
+│  │      index.js
+│  │      style.css
+│  │
+│  └─ModalDialog
+│          index.js
+│          style.css
+│
+├─containers
+│  ├─App
+│  │      index.js
+│  │
+│  ├─Home
+│  │      index.js
+│  │
+│  ├─Login
+│  │      index.js
+│  │      style.css
+│  │
+│  ├─Post
+│  │  │  index.js # Post 容器组件
+│  │  │  style.css
+│  │  │
+│  │  └─components # Post 专用组件
+│  │      ├─CommentList
+│  │      │      index.js
+│  │      │      style.css
+│  │      │
+│  │      ├─CommentsView
+│  │      │      index.js
+│  │      │      style.css
+│  │      │
+│  │      ├─PostEditor
+│  │      │      index.js
+│  │      │      style.css
+│  │      │
+│  │      └─PostView
+│  │              index.js
+│  │              style.css
+│  │
+│  └─PostList
+│      │  index.js # PostList 容器组件
+│      │  style.css
+│      │
+│      └─components # PostList 专用组件
+│          ├─PostItem
+│          │      index.js
+│          │      style.css
+│          │
+│          └─PostsView
+│                  index.js
+│
+├─images
+│      like-default.png
+│      like.png
+│
+├─redux
+│  │  configureStore.js
+│  │
+│  └─modules
+│          app.js
+│          auth.js
+│          comments.js
+│          index.js
+│          posts.js
+│          ui.js
+│          users.js
+│
+└─utils
+        AsyncComponent.js
+        connectRoute.js
+        date.js
+        request.js
+        SHA1.js
+        url.js
+```
+
 ### ts-lint：
 + xxx(配置规则): if else 必须换行(配置解释)
 
