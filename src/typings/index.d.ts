@@ -5,3 +5,4 @@ export type Response<T> = {
 
 // 接口请求相关类型定义
 export { DataResponse } from './getData';
+
