@@ -2,7 +2,7 @@
  * @Author: zhaohongyun1@jd.com
  * @Date: 2019-09-27 10:27:28
  * @LastEditors: zhaohongyun2
- * @LastEditTime: 2019-09-30 12:14:16
+ * @LastEditTime: 2019-10-08 11:58:18
  */
 /**
  * 全局通用的类型定义

@@ -2,7 +2,7 @@
  * @Author: zhaohongyun1@jd.com
  * @Date: 2019-09-29 14:16:33
  * @LastEditors: zhaohongyun2
- * @LastEditTime: 2019-09-30 12:02:36
+ * @LastEditTime: 2019-10-08 17:24:58
  */
 module.exports = {
   env: {
@@ -52,6 +52,10 @@ module.exports = {
       { functions: false, classes: false },
     ],
     '@typescript-eslint/prefer-interface': 'off',
+    '@typescript-eslint/consistent-type-assertions': [
+      'error',
+      { assertionStyle: 'as' },
+    ],
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'no-param-reassign': [2, { props: false }],

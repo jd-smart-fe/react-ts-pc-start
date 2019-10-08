@@ -1,13 +1,15 @@
+/* eslint-disable @typescript-eslint/triple-slash-reference */
+/* eslint-disable spaced-comment */
 /*
  * @Author: zhaohongyun1@jd.com
  * @Date: 2019-09-27 10:27:28
  * @LastEditors: zhaohongyun2
- * @LastEditTime: 2019-09-29 16:49:53
+ * @LastEditTime: 2019-10-08 17:17:50
  */
 
-// / <reference types="node" />
-// / <reference types="react" />
-// / <reference types="react-dom" />
+/// <reference types="node" />
+/// <reference types="react" />
+/// <reference types="react-dom" />
 
 declare namespace NodeJS {
   interface ProcessEnv {

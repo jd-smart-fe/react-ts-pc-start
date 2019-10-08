@@ -1,7 +1,9 @@
 import * as React from 'react';
+
 import AddTodo from './application/addTodo';
 import VisibleTodoList from './application/visibleTodoList';
 import Footer from './components/footer';
+import 'rc-org-chart/lib/style';
 
 // import logo from './logo.svg';
 
