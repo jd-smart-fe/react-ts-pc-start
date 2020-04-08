@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
-    "baseUrl": "node_modules",
+    "outDir": "./build/",
+    "baseUrl": "src",
     "paths": {
-    "@/*": ["../src/*"]
+      "@/*": ["/*"],
+      "typings/*": ["typings/*"],
+      "utils/*": ["utils/*"],
+      "components/*": ["components/*"],
+      "application/*": ["application/*"],
+      "static/*": ["static~!@`/*"]
     },
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "typeRoots": ["node_modules/@types", "./src/typings"],
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -19,11 +22,19 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "react"
   },
-  "include": [
-    "src"
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "config",
+    "lib",
+    "public",
+    "scripts",
+    "vm",
+    "wikidata"
   ]
 }

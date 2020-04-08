@@ -1,0 +1,14 @@
+{
+  "presets": ["@babel/preset-react", "@babel/preset-env", "@babel/typescript"],
+  "plugins": [
+    [
+      "react-intl",
+      {
+        "messagesDir": "./src/i18n/i18n-messages/"
+      }
+    ],
+    "@babel/plugin-proposal-numeric-separator",
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread"
+  ]
+}
