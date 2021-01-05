@@ -24,7 +24,7 @@
     "@types/redux-thunk": "^2.1.0",
     "acorn-dynamic-import": "^4.0.0",
     "antd": "^3.23.4",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "camelcase": "^5.2.0",
     "css-loader": "2.1.1",
     "dayjs": "^1.8.16",
